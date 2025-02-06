@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"github.com/openai/openai-go"
 	"github.com/openai/openai-go/option"
@@ -18,7 +19,7 @@ func isMessageOffensive(client *openai.Client, message string) (bool, error) {
 	ctx := context.Background()
 
 	// Define the prompt for the model
-	prompt := fmt.Sprintf("Is the following message offensive? Answer with 'true' or 'false' in lowercase without a period:\n\n\"%s\"", message)
+	prompt := fmt.Sprintf("Is the following message offensive? Answer with 'true' or 'false' and no period:\n\n\"%s\"", message)
 
 	// Create a chat completion request
 	chatCompletion, err := client.Chat.Completions.New(ctx, openai.ChatCompletionNewParams{
@@ -34,7 +35,7 @@ func isMessageOffensive(client *openai.Client, message string) (bool, error) {
 	// Check the model's response
 	if len(chatCompletion.Choices) > 0 {
 		answer := chatCompletion.Choices[0].Message.Content
-		if answer == "true" {
+		if strings.ToLower(answer) == "true" {
 			return true, nil
 		}
 	}
