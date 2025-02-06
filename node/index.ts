@@ -55,8 +55,8 @@ client.on('messageCreate', async (message: Message) => {
           `<@${message.author.id}>, your message was removed due to offensive content.`
         )
       }
-    } catch (err) {
-      console.error('Failed to delete message or notify user:', err)
+    } catch (error) {
+      console.error('Failed to delete message or notify user:', error)
     }
   }
 })
