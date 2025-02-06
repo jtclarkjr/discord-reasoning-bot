@@ -24,7 +24,7 @@ You will need to add a secret key to use and have access to reasoning models
 ## Discord
 You will need to set up a project and add a bot with the token and permissions to that project in the Discord developer portal
 
-Add a `config.json` file
+Add a `config.json` file to source code folder
 ```bash
 
 {
