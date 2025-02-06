@@ -4,28 +4,50 @@ Discord bot utilizing OpenAI api for reasoning
 
 ## Installation
 
+Go
+
 ```bash
 go mod tidy
+```
+
+Node
+
+```bash
+brew install nvm
+pnpm i
 ```
 
 ## Usage
 
 Base example uses reasoning model to determine if the input from the user is offensive. Then from discord side the bot removes (Admin access) the message and notifies the user
+
+Go
+
 ```bash
 go run .
 ```
 
+Node
+
+```bash
+pnpm start
+```
+
 ## Source code
+
 - Go
-- Typescript (add later)
+- Node (TypeScript)
 
 ## OpenAI
+
 You will need to add a secret key to use and have access to reasoning models
 
 ## Discord
+
 You will need to set up a project and add a bot with the token and permissions to that project in the Discord developer portal
 
 Add a `config.json` file to source code folder
+
 ```bash
 
 {
@@ -35,6 +57,7 @@ Add a `config.json` file to source code folder
 ```
 
 ## Env vars
+
 - `OPENAI_API_KEY`
 - `DISCORD_BOT_TOKEN`
 

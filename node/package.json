@@ -1,0 +1,19 @@
+{
+  "name": "discord-reasoning-bot",
+  "version": "1.0.0",
+  "description": "Discord reasoning bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-strip-types index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jtclarkjr",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.17.3",
+    "dotenv": "^16.4.7",
+    "install": "^0.13.0",
+    "npm": "^11.1.0",
+    "openai": "^4.83.0"
+  }
+}
