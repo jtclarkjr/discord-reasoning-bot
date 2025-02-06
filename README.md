@@ -17,6 +17,13 @@ brew install nvm
 pnpm i
 ```
 
+
+If don't have auto-install script for nvm can run 
+```bash
+nvm install 23.7.0
+nvm use 23.7.0
+```
+
 ## Usage
 
 Base example uses reasoning model to determine if the input from the user is offensive. Then from discord side the bot removes (Admin access) the message and notifies the user
