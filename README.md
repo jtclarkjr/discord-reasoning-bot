@@ -10,6 +10,7 @@ go mod tidy
 
 ## Usage
 
+Base example uses reasoning model to determine if the input from the user is offensive. Then from discord side the bot removes (Admin access) the message and notifies the user
 ```bash
 go run .
 ```
