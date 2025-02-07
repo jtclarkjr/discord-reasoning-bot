@@ -34,7 +34,12 @@ Base example uses reasoning model to determine if the input from the user is off
 go run .
 ```
 
-Turn on/off (WIP)
+Turn on/off
+
+```curl
+curl -X POST http://localhost:3000/bot/on
+curl -X POST http://localhost:3000/bot/off
+```
 
 ### Node
 
