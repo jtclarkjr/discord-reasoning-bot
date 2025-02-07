@@ -17,8 +17,8 @@ brew install nvm
 pnpm i
 ```
 
+If don't have auto-install script for nvm can run
 
-If don't have auto-install script for nvm can run 
 ```bash
 nvm install 23.7.0
 nvm use 23.7.0
@@ -28,16 +28,25 @@ nvm use 23.7.0
 
 Base example uses reasoning model to determine if the input from the user is offensive. Then from discord side the bot removes (Admin access) the message and notifies the user
 
-Go
+### Go
 
 ```bash
 go run .
 ```
 
-Node
+Turn on/off (WIP)
+
+### Node
 
 ```bash
 pnpm start
+```
+
+Turn on/off
+
+```curl
+curl -X POST http://localhost:3000/bot/on
+curl -X POST http://localhost:3000/bot/off
 ```
 
 ## Source code
