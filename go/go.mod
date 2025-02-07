@@ -2,9 +2,10 @@ module go-discord-bot
 
 go 1.22.2
 
-require github.com/bwmarrin/discordgo v0.28.1 //direct
-
-require github.com/openai/openai-go v0.1.0-alpha.55
+require (
+	github.com/bwmarrin/discordgo v0.28.1
+	github.com/openai/openai-go v0.1.0-alpha.56
+)
 
 require (
 	github.com/gorilla/websocket v1.4.2 // indirect
