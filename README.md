@@ -30,8 +30,20 @@ Base example uses reasoning model to determine if the input from the user is off
 
 ### Go
 
+#### Local
+
 ```bash
 go run .
+```
+
+#### Docker
+
+```bash
+export OPENAI_API_KEY=
+export DISCORD_BOT_TOKEN=
+eval "$(direnv hook zsh)"
+
+docker compose up
 ```
 
 Turn on/off
@@ -43,8 +55,20 @@ curl -X POST http://localhost:3000/bot/off
 
 ### Node
 
+#### Local
+
 ```bash
 pnpm start
+```
+
+#### Docker
+
+```bash
+export OPENAI_API_KEY=
+export DISCORD_BOT_TOKEN=
+eval "$(direnv hook zsh)"
+
+docker compose up
 ```
 
 Turn on/off
