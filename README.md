@@ -61,7 +61,7 @@ If you want to do on/off by chat inputs the most clear and straightforward solut
 - Avoiding having to do a API request to turn on/off
 - Can even set something like roleIds to have permissions only for `!on {bot.tag}` etc
 
-Many ways to play around with the base code here
+Another solution would to make use of process manager (pm2). There are many ways to play around with the base code here
 
 ## Source code
 
