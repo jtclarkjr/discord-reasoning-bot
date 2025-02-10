@@ -57,7 +57,7 @@ curl -X POST http://localhost:3000/bot/off
 If you want to do on/off by chat inputs the most clear and straightforward solution is to make another bot that initializes the desired bot to on/off. However, this intializer bot will need to be on. This is good for:
 
 - If the initializer bot is always on
-- Have mutliple bots needing to switch on/off
+- Have multiple bots needing to switch on/off
 - Avoiding having to do a API request to turn on/off
 - Can even set something like roleIds to have permissions only for `!on {bot.tag}` etc
 
