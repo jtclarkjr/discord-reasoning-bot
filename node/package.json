@@ -16,7 +16,7 @@
     "express": "^4.21.2",
     "install": "^0.13.0",
     "npm": "^11.1.0",
-    "openai": "^4.83.0"
+    "openai": "^4.84.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0"
