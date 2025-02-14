@@ -1,7 +1,6 @@
-import 'dotenv/config'
 import express from 'express'
-import { Client, GatewayIntentBits, Message, TextChannel } from 'discord.js'
 import OpenAI from 'openai'
+import { Client, GatewayIntentBits, Message, TextChannel } from 'discord.js'
 
 // Initialize OpenAI client
 const openai = new OpenAI({
