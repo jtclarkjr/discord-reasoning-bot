@@ -1,4 +1,5 @@
 import express from 'express'
+import morgan from 'morgan'
 import OpenAI from 'openai'
 import { Client, GatewayIntentBits, Message, TextChannel } from 'discord.js'
 
@@ -103,7 +104,15 @@ async function stopBot(): Promise<string> {
   }
 }
 
+/**
+ * Express REST endpoints
+ */
+
 const app = express()
+
+// HTTP request logging
+app.use(morgan('combined'))
+
 const port = process.env.PORT || 3000
 
 // Endpoint to start the bot
