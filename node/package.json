@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node --experimental-strip-types index.ts",
-    "start:local": "node --experimental-strip-types --env-file=.env.example index.ts"
+    "dev": "node --experimental-strip-types --env-file=.env.example index.ts"
   },
   "author": "jtclarkjr",
   "license": "MIT",
