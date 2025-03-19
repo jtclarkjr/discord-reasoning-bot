@@ -26,7 +26,7 @@ func isMessageOffensive(client *openai.Client, message string) (bool, error) {
 		Messages: openai.F([]openai.ChatCompletionMessageParamUnion{
 			openai.UserMessage(prompt),
 		}),
-		Model: openai.F(openai.ChatModelO1Mini), // Check OpenAI account has tier access to o3-mini model if getting error
+		Model: openai.F(openai.ChatModelO3Mini), // Check OpenAI account has tier access to o3-mini model if getting error
 	})
 	if err != nil {
 		return false, err
