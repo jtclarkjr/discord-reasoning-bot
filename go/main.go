@@ -64,8 +64,8 @@ func main() {
 
 	// Start HTTP server in a separate goroutine
 	go func() {
-		fmt.Println("Starting HTTP server on :3000")
-		if err := http.ListenAndServe(":3000", r); err != nil {
+		fmt.Println("Starting HTTP server on :8080")
+		if err := http.ListenAndServe(":8080", r); err != nil {
 			log.Fatal(err)
 		}
 	}()
