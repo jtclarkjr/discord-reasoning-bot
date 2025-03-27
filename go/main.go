@@ -9,8 +9,8 @@ import (
 	"syscall"
 
 	"github.com/bwmarrin/discordgo"
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
+	"github.com/jtclarkjr/router-go"
+	"github.com/jtclarkjr/router-go/middleware"
 	"github.com/openai/openai-go"
 )
 
@@ -56,7 +56,7 @@ func main() {
 	sess.Identify.Intents = discordgo.IntentsGuildMessages
 
 	// Start HTTP server with chi router
-	r := chi.NewRouter()
+	r := router.NewRouter()
 	r.Use(middleware.Logger)
 
 	r.Post("/bot/on", botHandler.startBotHandler)
