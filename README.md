@@ -43,7 +43,7 @@ export OPENAI_API_KEY=
 export DISCORD_BOT_TOKEN=
 eval "$(direnv hook zsh)"
 
-docker compose up
+docker compose up --build
 ```
 
 Turn on/off
@@ -68,7 +68,7 @@ export OPENAI_API_KEY=
 export DISCORD_BOT_TOKEN=
 eval "$(direnv hook zsh)"
 
-docker compose up
+docker compose up --build
 ```
 
 Turn on/off
