@@ -10,7 +10,7 @@ import (
 )
 
 // Initialize OpenAI client
-func initOpenAIClient(apiKey string) *openai.Client {
+func initOpenAIClient(apiKey string) openai.Client {
 	return openai.NewClient(option.WithAPIKey(apiKey))
 }
 
@@ -23,10 +23,10 @@ func isMessageOffensive(client *openai.Client, message string) (bool, error) {
 
 	// Create a chat completion request
 	chatCompletion, err := client.Chat.Completions.New(ctx, openai.ChatCompletionNewParams{
-		Messages: openai.F([]openai.ChatCompletionMessageParamUnion{
+		Messages: []openai.ChatCompletionMessageParamUnion{
 			openai.UserMessage(prompt),
-		}),
-		Model: openai.F(openai.ChatModelO3Mini), // Check OpenAI account has tier access to o3-mini model if getting error
+		},
+		Model: openai.ChatModelO3Mini, // Check OpenAI account has tier access to o3-mini model if getting error
 	})
 	if err != nil {
 		return false, err

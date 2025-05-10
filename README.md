@@ -4,13 +4,13 @@ Discord bot utilizing OpenAI api for reasoning
 
 ## Installation
 
-Go
+Go (1.24.0)
 
 ```bash
 go mod tidy
 ```
 
-Node
+Node (24.0.0)
 
 ```bash
 brew install nvm
@@ -20,8 +20,8 @@ pnpm i
 If don't have auto-install script for nvm can run
 
 ```bash
-nvm install 23.7.0
-nvm use 23.7.0
+nvm install 24.0.0
+nvm use 24.0.0
 ```
 
 ## Usage

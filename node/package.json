@@ -5,17 +5,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.ts",
-    "dev": "node --env-file=.env.example index.ts"
+    "start": "node --disable-warning=ExperimentalWarning --trace-warnings index.ts",
+    "dev": "node --disable-warning=ExperimentalWarning  --trace-warnings --env-file=.env index.ts"
   },
   "author": "jtclarkjr",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.18.0",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "fly": "^4.6.16",
     "morgan": "^1.10.0",
-    "openai": "^4.86.1"
+    "openai": "^4.98.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",

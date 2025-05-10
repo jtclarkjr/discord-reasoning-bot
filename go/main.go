@@ -34,7 +34,7 @@ func main() {
 	}
 
 	client := initOpenAIClient(apiKey)
-	botHandler := NewBotHandler(client)
+	botHandler := NewBotHandler(&client)
 
 	// Load Discord bot token
 	botToken := os.Getenv("DISCORD_BOT_TOKEN")

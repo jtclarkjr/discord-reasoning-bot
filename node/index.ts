@@ -114,7 +114,7 @@ const app = express()
 // HTTP request logging
 app.use(morgan('combined'))
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
 
 // Endpoint to start the bot
 app.post('/bot/on', async (_req, res) => {
