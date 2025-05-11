@@ -49,8 +49,8 @@ docker compose up --build
 Turn on/off
 
 ```curl
-curl -X POST http://localhost:3000/bot/on
-curl -X POST http://localhost:3000/bot/off
+curl -X POST http://localhost:8080/bot/on
+curl -X POST http://localhost:8080/bot/off
 ```
 
 ### Node
@@ -74,8 +74,8 @@ docker compose up --build
 Turn on/off
 
 ```curl
-curl -X POST http://localhost:3000/bot/on
-curl -X POST http://localhost:3000/bot/off
+curl -X POST http://localhost:8080/bot/on
+curl -X POST http://localhost:8080/bot/off
 ```
 
 If you want to do on/off by chat inputs the most clear and straightforward solution is to make another bot that controls the desired bot to on/off. However, this controller bot will need to be on. This is good for:
