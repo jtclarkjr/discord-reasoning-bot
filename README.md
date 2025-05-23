@@ -14,7 +14,7 @@ Node (24.0.0)
 
 ```bash
 brew install nvm
-pnpm i
+bun i
 ```
 
 If don't have auto-install script for nvm can run
@@ -58,7 +58,7 @@ curl -X POST http://localhost:8080/bot/off
 #### Local
 
 ```bash
-pnpm start
+bun start
 ```
 
 #### Docker

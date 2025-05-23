@@ -12,9 +12,12 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
-# Install pnpm
-ARG PNPM_VERSION=10.10.0
-RUN npm install -g pnpm@$PNPM_VERSION
+# Install bun
+RUN curl -fsSL https://bun.sh/install | bash && \
+    ln -s /root/.bun/bin/bun /usr/local/bin/bun
+
+
+
 
 
 # Throw-away build stage to reduce size of final image
@@ -28,7 +31,7 @@ RUN apt-get update -qq && \
 COPY package.json pnpm-lock.yaml* ./
 
 # Install dependencies
-RUN pnpm install --frozen-lockfile
+RUN bun install --frozen-lockfile
 
 # Copy the rest of the application code
 COPY . .
@@ -37,9 +40,13 @@ COPY . .
 # Final stage for app image
 FROM base
 
+# Copy bun installation
+COPY --from=build /root/.bun /root/.bun
+RUN ln -s /root/.bun/bin/bun /usr/local/bin/bun
+
 # Copy built application
 COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 8080
-CMD [ "pnpm", "run", "start" ]
+CMD [ "bun", "run", "start" ]
