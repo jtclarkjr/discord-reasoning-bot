@@ -1,0 +1,24 @@
+{
+  "name": "discord-reasoning-bot",
+  "version": "1.0.0",
+  "description": "Discord reasoning bot",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "bun index.ts",
+    "dev": "bun  --env-file=.env index.ts"
+  },
+  "author": "jtclarkjr",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0",
+    "openai": "^4.98.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9"
+  }
+}

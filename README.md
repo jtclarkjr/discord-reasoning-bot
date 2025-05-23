@@ -17,11 +17,11 @@ brew install nvm
 pnpm i
 ```
 
-If don't have auto-install script for nvm can run
+Bun (lastest)
 
 ```bash
-nvm install 24.0.0
-nvm use 24.0.0
+brew install bun
+bun i
 ```
 
 ## Usage
@@ -58,7 +58,25 @@ curl -X POST http://localhost:8080/bot/off
 #### Local
 
 ```bash
-pnpm start
+pnpm dev
+```
+
+#### Docker
+
+```bash
+export OPENAI_API_KEY=
+export DISCORD_BOT_TOKEN=
+eval "$(direnv hook zsh)"
+
+docker compose up --build
+```
+
+### Bun
+
+#### Local
+
+```bash
+bun dev
 ```
 
 #### Docker
@@ -91,6 +109,7 @@ Another solution would to make use of process manager (pm2). There are many ways
 
 - Go
 - Node (TypeScript)
+- Bun (TypeScript)
 
 ## OpenAI
 
