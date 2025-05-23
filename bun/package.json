@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "bun index.ts",
-    "dev": "bun  --env-file=.env index.ts"
+    "dev": "bun --env-file=.env index.ts"
   },
   "author": "jtclarkjr",
   "license": "MIT",
@@ -15,10 +15,10 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "morgan": "^1.10.0",
-    "openai": "^4.98.0"
+    "openai": "^4.103.0"
   },
   "devDependencies": {
-    "@types/express": "^5.0.0",
+    "@types/express": "^5.0.2",
     "@types/morgan": "^1.9.9"
   }
 }
