@@ -11,4 +11,4 @@ services:
       - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
     volumes:
       - /app/node_modules # Prevents overwriting node_modules inside container
-    command: ['bun', 'run', 'start']
+    command: ['pnpm', 'run', 'start']
