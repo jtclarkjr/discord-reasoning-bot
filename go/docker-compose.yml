@@ -11,4 +11,5 @@ services:
       - .envrc
     environment:
       - ENV=production
+      - COMPOSE_BAKE=true
     command: ["/usr/local/bin/run-app"]
