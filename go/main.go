@@ -12,6 +12,7 @@ import (
 	"github.com/jtclarkjr/router-go"
 	"github.com/jtclarkjr/router-go/middleware"
 	"github.com/openai/openai-go"
+	"github.com/jtclarkjr/discord-reasoning-bot/go/openai"
 )
 
 var sess *discordgo.Session
@@ -33,7 +34,7 @@ func main() {
 		log.Fatal("OpenAI API key is not set")
 	}
 
-	client := initOpenAIClient(apiKey)
+	client := openai.InitOpenAIClient(apiKey)
 	botHandler := NewBotHandler(&client)
 
 	// Load Discord bot token
@@ -83,7 +84,7 @@ func (b *BotHandler) messageHandler(s *discordgo.Session, m *discordgo.MessageCr
 	}
 
 	// Check if the message is offensive
-	offensive, err := isMessageOffensive(b.client, m.Content)
+	offensive, err := openai.IsMessageOffensive(b.client, m.Content)
 	if err != nil {
 		log.Println("Error checking message:", err)
 		return

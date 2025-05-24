@@ -1,4 +1,4 @@
-package main
+package openai
 
 import (
 	"context"
@@ -10,12 +10,12 @@ import (
 )
 
 // Initialize OpenAI client
-func initOpenAIClient(apiKey string) openai.Client {
+func InitOpenAIClient(apiKey string) openai.Client {
 	return openai.NewClient(option.WithAPIKey(apiKey))
 }
 
 // Check if a message is offensive using OpenAI's API
-func isMessageOffensive(client *openai.Client, message string) (bool, error) {
+func IsMessageOffensive(client *openai.Client, message string) (bool, error) {
 	ctx := context.Background()
 
 	// Define the prompt for the model
