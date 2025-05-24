@@ -113,15 +113,15 @@ const app = new Hono()
 const port = process.env.PORT || 8080
 
 // Endpoint to start the bot
-app.post('/bot/on', async (c) => {
+app.post('/bot/on', async (context) => {
   const result = await startBot()
-  return c.text(result, 200)
+  return context.text(result, 200)
 })
 
 // Endpoint to stop the bot
-app.post('/bot/off', async (c) => {
+app.post('/bot/off', async (context) => {
   const result = await stopBot()
-  return c.text(result, 200)
+  return context.text(result, 200)
 })
 
 // Listen using Bun's native server
