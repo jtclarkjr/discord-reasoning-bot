@@ -9,6 +9,7 @@ services:
       - BUN_ENV="production"
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      - COMPOSE_BAKE=true
     volumes:
       - /app/node_modules # Prevents overwriting node_modules inside container
     command: ['bun', 'start']
