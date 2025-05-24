@@ -11,14 +11,13 @@
   "author": "jtclarkjr",
   "license": "MIT",
   "dependencies": {
+   
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "morgan": "^1.10.0",
+    "hono": "4.7.10",
     "openai": "^4.103.0"
   },
   "devDependencies": {
-    "@types/express": "^5.0.2",
-    "@types/morgan": "^1.9.9"
+     "@types/bun": "^1.2.14"
   }
 }

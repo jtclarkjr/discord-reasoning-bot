@@ -1,6 +1,5 @@
 import 'dotenv/config'
-import express from 'express'
-import morgan from 'morgan'
+import { Hono } from 'hono'
 import OpenAI from 'openai'
 import { Client, GatewayIntentBits, Message, TextChannel } from 'discord.js'
 
@@ -106,28 +105,27 @@ async function stopBot(): Promise<string> {
 }
 
 /**
- * Express REST endpoints
+ * Hono REST endpoints
  */
 
-const app = express()
-
-// HTTP request logging
-app.use(morgan('combined'))
+const app = new Hono()
 
 const port = process.env.PORT || 8080
 
 // Endpoint to start the bot
-app.post('/bot/on', async (_req, res) => {
+app.post('/bot/on', async (c) => {
   const result = await startBot()
-  res.status(200).send(result)
+  return c.text(result, 200)
 })
 
 // Endpoint to stop the bot
-app.post('/bot/off', async (_req, res) => {
+app.post('/bot/off', async (c) => {
   const result = await stopBot()
-  res.status(200).send(result)
+  return c.text(result, 200)
 })
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`)
-})
+// Listen using Bun's native server
+export default {
+  port,
+  fetch: app.fetch
+}
