@@ -8,7 +8,7 @@ FROM oven/bun:${BUN_VERSION}-slim AS base
 WORKDIR /app
 
 # Set production environment
-ENV NODE_ENV="production"
+ENV BUN_ENV="production"
 
 
 # Throw-away build stage to reduce size of final image
