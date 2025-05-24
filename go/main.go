@@ -55,7 +55,6 @@ func main() {
 	// Set intents to receive message events
 	sess.Identify.Intents = discordgo.IntentsGuildMessages
 
-	// Start HTTP server with chi router
 	r := router.NewRouter()
 	r.Use(middleware.Logger)
 
