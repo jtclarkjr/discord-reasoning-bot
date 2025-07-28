@@ -114,6 +114,8 @@ Another solution would to make use of process manager (pm2). There are many ways
 ## OpenAI
 
 You will need to add a secret key to use and have access to reasoning models
+- Code uses o3 reasoning model but needs verified account or 4-5 tier
+- Tier 1-3 is reccommend to use o4‑mini reason model instead since it's the available option
 
 ## Discord
 
