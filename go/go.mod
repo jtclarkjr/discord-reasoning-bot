@@ -3,9 +3,9 @@ module go-discord-bot
 go 1.24.1
 
 require (
-	github.com/bwmarrin/discordgo v0.28.1
+	github.com/bwmarrin/discordgo v0.29.0
 	github.com/jtclarkjr/router-go v0.1.0-alpha.2
-	github.com/openai/openai-go v0.1.0-beta.10
+	github.com/openai/openai-go v1.11.1
 )
 
 require (
