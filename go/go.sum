@@ -2,14 +2,8 @@ github.com/bwmarrin/discordgo v0.29.0 h1:FmWeXFaKUwrcL3Cx65c20bTRW+vOb6k8AnaP+Eg
 github.com/bwmarrin/discordgo v0.29.0/go.mod h1:NJZpH+1AfhIcyQsPeuBKsUtYrRnjkyu0kIVMCHkZtRY=
 github.com/gorilla/websocket v1.4.2 h1:+/TMaTYc4QFitKJxsQ7Yye35DkWvkdLcvGKqM+x0Ufc=
 github.com/gorilla/websocket v1.4.2/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
-github.com/jtclarkjr/router-go v0.1.0-alpha.2 h1:Z9K9fsyWc/Qerr6qk8H74T8tEla76YYZEitWKlAYy20=
-github.com/jtclarkjr/router-go v0.1.0-alpha.2/go.mod h1:XrZ+o5DzvCxEmPNHYTyZOXTb80E9rGc3X2Srr3UgZRA=
-github.com/openai/openai-go v1.11.1 h1:fTQ4Sr9eoRiWFAoHzXiZZpVi6KtLeoTMyGrcOCudjNU=
-github.com/openai/openai-go v1.11.1/go.mod h1:g461MYGXEXBVdV5SaR/5tNzNbSfwTBBefwc+LlDCK0Y=
-github.com/openai/openai-go v1.12.0 h1:NBQCnXzqOTv5wsgNC36PrFEiskGfO5wccfCWDo9S1U0=
-github.com/openai/openai-go v1.12.0/go.mod h1:g461MYGXEXBVdV5SaR/5tNzNbSfwTBBefwc+LlDCK0Y=
-github.com/openai/openai-go/v2 v2.0.0 h1:q11TcjnHD5oWkX4bJK1BwuZ56EOCMbc/P+xpiRRiNYo=
-github.com/openai/openai-go/v2 v2.0.0/go.mod h1:sIUkR+Cu/PMUVkSKhkk742PRURkQOCFhiwJ7eRSBqmk=
+github.com/jtclarkjr/router-go v0.3.1 h1:4JqRXnw4hSuLtF6BnJUbiCRVussU4WBND9Qy8hZjaiI=
+github.com/jtclarkjr/router-go v0.3.1/go.mod h1:XrZ+o5DzvCxEmPNHYTyZOXTb80E9rGc3X2Srr3UgZRA=
 github.com/openai/openai-go/v2 v2.0.1 h1:tTw7HLrS/AccW9cttJRtDiglekQ70lMoDP46kAwkfM4=
 github.com/openai/openai-go/v2 v2.0.1/go.mod h1:sIUkR+Cu/PMUVkSKhkk742PRURkQOCFhiwJ7eRSBqmk=
 github.com/tidwall/gjson v1.14.2/go.mod h1:/wbyibRr2FHMks5tjHJ5F8dMZh3AcwJEMf5vlfC0lxk=
