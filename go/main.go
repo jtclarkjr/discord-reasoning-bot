@@ -59,7 +59,7 @@ func main() {
 	r.Use(middleware.Logger)
 
 	r.Post("/bot/on", botHandler.startBotHandler)
-	r.Post("/bot/off", stopBotHandler)
+	r.Post("/bot/off", botHandler.stopBotHandler)
 
 	// Start HTTP server in a separate goroutine
 	go func() {
@@ -116,7 +116,7 @@ func (b *BotHandler) startBotHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // stopBotHandler stops the bot connection
-func stopBotHandler(w http.ResponseWriter, r *http.Request) {
+func (b *BotHandler) stopBotHandler(w http.ResponseWriter, r *http.Request) {
 	err := sess.Close()
 	if err != nil {
 		http.Error(w, "Failed to stop bot: "+err.Error(), http.StatusInternalServerError)
