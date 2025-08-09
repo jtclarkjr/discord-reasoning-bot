@@ -29,10 +29,11 @@ func NewBotHandler(client *openai.Client) *BotHandler {
 func main() {
 	r := router.NewRouter()
 	r.Use(middleware.Logger)
-	r.Use(middleware.EnvVarChecker("OPENAI_API_KEY", "DISCORD_BOT_TOKEN"))
 
 	apiKey := os.Getenv("OPENAI_API_KEY")
 	botToken := os.Getenv("DISCORD_BOT_TOKEN")
+
+	r.Use(middleware.EnvVarChecker("OPENAI_API_KEY", "DISCORD_BOT_TOKEN"))
 
 	client := initOpenAIClient(apiKey)
 	botHandler := NewBotHandler(&client)
