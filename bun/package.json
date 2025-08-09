@@ -14,9 +14,10 @@
     "discord.js": "^14.21.0",
     "dotenv": "^17.1.0",
     "hono": "4.8.4",
-    "openai": "^5.8.2"
+    "openai": "^5.12.2"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.18"
+    "@flydotio/dockerfile": "^0.7.10",
+    "@types/bun": "^1.2.19"
   }
 }

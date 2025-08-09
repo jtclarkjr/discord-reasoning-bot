@@ -5,7 +5,7 @@ go 1.24.1
 require (
 	github.com/bwmarrin/discordgo v0.29.0
 	github.com/jtclarkjr/router-go v0.1.0-alpha.2
-	github.com/openai/openai-go v1.11.1
+	github.com/openai/openai-go/v2 v2.0.1
 )
 
 require (

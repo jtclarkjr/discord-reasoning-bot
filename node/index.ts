@@ -20,7 +20,7 @@ let client: Client | null = null
 async function isMessageOffensive(messageContent: string): Promise<boolean> {
   try {
     const response = await openai.chat.completions.create({
-      model: 'o3-mini', // Ensure this model is available to your account or will error
+      model: 'gpt-5',
       messages: [
         {
           role: 'user',

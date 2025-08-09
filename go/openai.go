@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/openai/openai-go"
-	"github.com/openai/openai-go/option"
+	"github.com/openai/openai-go/v2"
+	"github.com/openai/openai-go/v2/option"
 )
 
 // Initialize OpenAI client
@@ -26,7 +26,7 @@ func isMessageOffensive(client *openai.Client, message string) (bool, error) {
 		Messages: []openai.ChatCompletionMessageParamUnion{
 			openai.UserMessage(prompt),
 		},
-		Model: openai.ChatModelO3Mini, // Check OpenAI account has tier access to o3-mini model if getting error
+		Model: openai.ChatModelGPT5,
 	})
 	if err != nil {
 		return false, err

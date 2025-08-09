@@ -11,7 +11,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/jtclarkjr/router-go"
 	"github.com/jtclarkjr/router-go/middleware"
-	"github.com/openai/openai-go"
+	"github.com/openai/openai-go/v2"
 )
 
 var sess *discordgo.Session
