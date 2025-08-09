@@ -54,18 +54,24 @@ func main() {
 	r.Post("/bot/on", botHandler.startBotHandler)
 	r.Post("/bot/off", botHandler.stopBotHandler)
 
-	// Start HTTP server in a separate goroutine
+	// Handle shutdown signals in a goroutine
 	go func() {
-		fmt.Println("Starting HTTP server on :8080")
-		if err := http.ListenAndServe(":8080", r); err != nil {
-			log.Fatal(err)
+		sc := make(chan os.Signal, 1)
+		signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
+		<-sc
+
+		fmt.Println("Shutting down...")
+		if sess != nil {
+			sess.Close()
 		}
+		os.Exit(0)
 	}()
 
-	// Wait for termination signal
-	sc := make(chan os.Signal, 1)
-	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
-	<-sc
+	// Start HTTP server on main goroutine
+	fmt.Println("Starting HTTP server on :8080")
+	if err := http.ListenAndServe(":8080", r); err != nil {
+		log.Fatal(err)
+	}
 }
 
 // messageHandler continuously monitors messages while the bot is running
