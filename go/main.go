@@ -27,20 +27,15 @@ func NewBotHandler(client *openai.Client) *BotHandler {
 }
 
 func main() {
-	// Load OpenAI API key
+	r := router.NewRouter()
+	r.Use(middleware.Logger)
+	r.Use(middleware.EnvVarChecker("OPENAI_API_KEY", "DISCORD_BOT_TOKEN"))
+
 	apiKey := os.Getenv("OPENAI_API_KEY")
-	if apiKey == "" {
-		log.Fatal("OpenAI API key is not set")
-	}
+	botToken := os.Getenv("DISCORD_BOT_TOKEN")
 
 	client := initOpenAIClient(apiKey)
 	botHandler := NewBotHandler(&client)
-
-	// Load Discord bot token
-	botToken := os.Getenv("DISCORD_BOT_TOKEN")
-	if botToken == "" {
-		log.Fatal("Discord bot token is not set")
-	}
 
 	// Initialize Discord session
 	var err error
@@ -54,9 +49,6 @@ func main() {
 
 	// Set intents to receive message events
 	sess.Identify.Intents = discordgo.IntentsGuildMessages
-
-	r := router.NewRouter()
-	r.Use(middleware.Logger)
 
 	r.Post("/bot/on", botHandler.startBotHandler)
 	r.Post("/bot/off", botHandler.stopBotHandler)
