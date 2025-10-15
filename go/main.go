@@ -62,7 +62,9 @@ func main() {
 
 		fmt.Println("Shutting down...")
 		if sess != nil {
-			sess.Close()
+			if err := sess.Close(); err != nil {
+				log.Println("Error closing Discord session:", err)
+			}
 		}
 		os.Exit(0)
 	}()
@@ -111,7 +113,9 @@ func (b *BotHandler) startBotHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintln(w, "Bot started successfully.")
+	if _, err := fmt.Fprintln(w, "Bot started successfully."); err != nil {
+		log.Println("Error writing response:", err)
+	}
 }
 
 // stopBotHandler stops the bot connection
@@ -122,5 +126,7 @@ func (b *BotHandler) stopBotHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintln(w, "Bot stopped successfully.")
+	if _, err := fmt.Fprintln(w, "Bot stopped successfully."); err != nil {
+		log.Println("Error writing response:", err)
+	}
 }
